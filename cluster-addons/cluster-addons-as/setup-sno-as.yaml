@@ -10,10 +10,10 @@ spec:
       repoURL: https://github.com/romerobu/workshop-gitops-content-deploy.git
       revision: main
       files:
-      - path: "cluster-definition/sno-1/cluster.json"
+      - path: "cluster-definition/**/cluster.json"
   template:
     metadata:
-      name: 'setup-sno-1'
+      name: 'setup-{{cluster.name}}'
     spec:
       project: project-sno-1
       source:
@@ -22,49 +22,13 @@ spec:
             - name: global.render
               value: 'true'
             - name: global.operators.enabled
-              value: 'true'  
+              value: 'true'           
         repoURL: https://github.com/romerobu/workshop-gitops-content-deploy.git
         targetRevision: main
         path: cluster-addons/charts ## Pending to test/{{cluster.name}} 
       destination:
-        server: 'https://api.sno-1.sandbox81.opentlc.com:6443'
+        server: '{{cluster.address}}'
       syncPolicy:
         automated:
           prune: true
-          selfHeal: true
-# ---
-# apiVersion: argoproj.io/v1alpha1
-# kind: ApplicationSet
-# metadata:
-#   name: setup-sno-1
-#   namespace: openshift-operators
-# spec:
-#   generators:
-#   - git:
-#       repoURL: https://github.com/romerobu/workshop-gitops-content-deploy.git
-#       revision: main
-#       files:
-#       - path: "cluster-definition/**/cluster.json"
-#   template:
-#     metadata:
-#       name: 'setup-{{cluster.name}}'
-#     spec:
-#       project: project-sno-1
-#       source:
-#         helm:
-#           parameters:
-#             - name: global.render
-#               value: 'true'
-#             - name: global.operators.enabled
-#               value: 'true'        
-#           valueFiles:
-#             - charts/values.yaml      
-#         repoURL: https://github.com/romerobu/workshop-gitops-content-deploy.git
-#         targetRevision: main
-#         path: cluster-addons/charts/gitops-setup/ ## Pending to test/{{cluster.name}} 
-#       destination:
-#         server: '{{cluster.address}}'
-#       syncPolicy:
-#         automated:
-#           prune: true
-#           selfHeal: true          
+          selfHeal: true          
