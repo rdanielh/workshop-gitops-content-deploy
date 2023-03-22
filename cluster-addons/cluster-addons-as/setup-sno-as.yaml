@@ -17,12 +17,6 @@ spec:
     spec:
       project: project-sno-1
       source:
-        helm:
-          parameters:
-            - name: global.render
-              value: 'true'
-            - name: global.operators.enabled
-              value: 'true'           
         repoURL: https://github.com/romerobu/workshop-gitops-content-deploy.git
         targetRevision: main
         path: cluster-addons/charts ## Pending to test/{{cluster.name}} 
