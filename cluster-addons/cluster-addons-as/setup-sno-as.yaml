@@ -13,7 +13,7 @@ spec:
       - path: "cluster-definition/**/cluster.json"
   template:
     metadata:
-      name: 'setup-{{cluster.name}}'
+      name: 'setup-{{cluster.name}}-a'
     spec:
       project: project-sno-1
       source:
