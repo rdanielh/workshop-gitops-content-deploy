@@ -25,7 +25,7 @@ spec:
               value: 'true'  
         repoURL: https://github.com/romerobu/workshop-gitops-content-deploy.git
         targetRevision: main
-        path: cluster-addons/charts/gitops-setup/ ## Pending to test/{{cluster.name}} 
+        path: cluster-addons/charts ## Pending to test/{{cluster.name}} 
       destination:
         server: 'https://api.sno-1.sandbox81.opentlc.com:6443'
       syncPolicy:
