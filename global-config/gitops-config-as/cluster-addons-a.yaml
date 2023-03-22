@@ -3,12 +3,12 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: cluster-addons-a
-  namespace: openshift-gitops
+  namespace: openshift-operators
 spec:
   destination:
-    namespace: openshift-gitops
+    namespace: openshift-operators
     server: https://kubernetes.default.svc
-  project: default
+  project: project-sno-1
   source:
     repoURL: https://gitlab.consulting.redhat.com/iberia-consulting/telefonica/ACM-Use-cases.git
     targetRevision: main
