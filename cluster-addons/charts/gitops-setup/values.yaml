@@ -1,0 +1,6 @@
+# Default values for gitops setup
+
+global:
+  render: true
+  operators: 
+    enabled: false
