@@ -2,5 +2,7 @@
 
 global:
   render: true
+  argocd:
+    enabled: true
   operators: 
-    enabled: false
+    enabled: true
