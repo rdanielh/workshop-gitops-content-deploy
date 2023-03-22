@@ -1,0 +1,28 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: setup-sno
+  namespace: openshift-gitops
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/romerobu/workshop-gitops-content-deploy.git
+      revision: main
+      files:
+      - path: "cluster-definition/**/cluster.json"
+  template:
+    metadata:
+      name: 'setup-{{cluster.name}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/romerobu/workshop-gitops-content-deploy.git
+        targetRevision: main
+        path: cluster-addons/charts ## Pending to test/{{cluster.name}} 
+      destination:
+        server: '{{cluster.address}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
