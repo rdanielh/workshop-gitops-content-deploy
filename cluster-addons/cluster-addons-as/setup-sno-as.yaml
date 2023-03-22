@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: setup-sno
+  name: setup-sno-1
   namespace: openshift-operators
 spec:
   generators:

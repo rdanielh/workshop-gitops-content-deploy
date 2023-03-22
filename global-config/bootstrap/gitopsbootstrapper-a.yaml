@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: gitops-bootstrapper
+  name: gitops-bootstrapper-sno-1
   namespace: openshift-operators
 spec:
   destination:
