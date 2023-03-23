@@ -43,8 +43,6 @@ spec:
     defaultPolicy: ''
     policy: |-
       g, system:cluster-admins, role:admin
-      p, role:admin, *, *, *, allow      
-      g, sno-users, role:admin      
     scopes: '[groups]'
   redis:
     resources:
