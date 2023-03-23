@@ -21,6 +21,14 @@ spec:
 {{- if $val.csv }}
   startingCSV: {{ $val.csv }}
 {{- end }}
+{{- if $operators.gitops.enabled }}
+  config:
+    env:
+    - name: ARGOCD_CLUSTER_CONFIG_NAMESPACES
+      value: ipa, app, dev, openshift-config, openshift-operators, pro
+    - name: DISABLE_DEFAULT_ARGOCD_INSTANCE
+      value: "true"      
+{{- end }}
 {{- end }}
 {{- end }}
 {{- end -}}
