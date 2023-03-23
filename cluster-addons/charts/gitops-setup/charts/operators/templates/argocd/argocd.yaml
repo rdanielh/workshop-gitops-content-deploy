@@ -1,7 +1,7 @@
 kind: ArgoCD
 apiVersion: argoproj.io/v1alpha1
 metadata:
-  name: argocd
+  name: {{ $.Values.argocd.name }}
   namespace: {{ $.Values.operators.gitops.namespace }}
   {{- if $.Values.global.argocd.enabled }}
   annotations:
@@ -42,7 +42,7 @@ spec:
   rbac:
     defaultPolicy: ''
     policy: |-
-      g, cluster-admins, role:admin
+      g, {{ $.Values.argocd.group }}, role:admin
     scopes: '[groups]'
   redis:
     resources:

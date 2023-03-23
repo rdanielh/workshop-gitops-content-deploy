@@ -8,3 +8,7 @@ operators:
     source: redhat-operators
     sourcenamespace: openshift-marketplace
     namespace: openshift-operators
+
+argocd:
+  name: argocd
+  group: cluster-admins
