@@ -4,5 +4,6 @@ global:
   render: true
   argocd:
     enabled: true
+    controller: openshift-operators
   operators: 
     enabled: true
