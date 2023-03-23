@@ -8,11 +8,6 @@ metadata:
     argocd.argoproj.io/sync-wave: "5"
   {{- end }}  
 spec:
-  rbac:
-    defaultPolicy: 'role:readonly'
-    policy: |-
-      g, system:cluster-admins, role:admin
-    scopes: '[groups]'
   sso:
     dex:  
       openShiftOAuth: true
