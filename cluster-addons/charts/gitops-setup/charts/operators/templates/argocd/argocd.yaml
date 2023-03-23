@@ -14,9 +14,7 @@ spec:
       g, system:cluster-admins, role:admin
     scopes: '[groups]'
   sso:
-    dex:
-      groups:
-       - cluster-admins    
+    dex:  
       openShiftOAuth: true
       resources:
         limits:
