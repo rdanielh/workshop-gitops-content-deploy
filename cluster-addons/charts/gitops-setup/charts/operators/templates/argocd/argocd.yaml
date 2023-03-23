@@ -10,6 +10,8 @@ metadata:
 spec:
   sso:
     dex:
+      groups:
+       - default    
       openShiftOAuth: true
       resources:
         limits:
