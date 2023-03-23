@@ -19,7 +19,12 @@ spec:
       source:
         repoURL: https://github.com/romerobu/workshop-gitops-content-deploy.git
         targetRevision: main
-        path: cluster-addons/charts/gitops-setup ## Pending to test/{{cluster.name}}    
+        path: cluster-addons/charts/gitops-setup 
+         # si fuese necesario parametrizar el destino con variables, se puede usar el cluster name y las vars globales como parametros y habilitar secciones de variables
+         # por ejemplo:
+         # sno-1: # esto seria parametrizado por la var global
+            # varx: scads
+            # vary: sacds
       destination:
         server: '{{cluster.address}}'
       syncPolicy:
