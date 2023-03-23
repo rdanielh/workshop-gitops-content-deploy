@@ -8,7 +8,6 @@ metadata:
     argocd.argoproj.io/sync-wave: "5"
   {{- end }}  
 spec:
-  resourceTrackingMethod: annotation+label
   applicationSet:
     logLevel: info
   controller:
