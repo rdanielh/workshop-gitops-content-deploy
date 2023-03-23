@@ -4,8 +4,8 @@ metadata:
   name: cluster-admin-1
 subjects:
   - kind: ServiceAccount
-    name: argocd-application-controller
-    namespace: argocd
+    name: argocd-argocd-application-controller
+    namespace: openshift-operators
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
