@@ -8,10 +8,15 @@ metadata:
     argocd.argoproj.io/sync-wave: "5"
   {{- end }}  
 spec:
+  rbac:
+    defaultPolicy: 'role:readonly'
+    policy: |-
+      g, system:cluster-admins, role:admin
+    scopes: '[groups]'
   sso:
     dex:
       groups:
-       - default    
+       - cluster-admins    
       openShiftOAuth: true
       resources:
         limits:
@@ -41,11 +46,6 @@ spec:
       requests:
         cpu: 250m
         memory: 128Mi
-  rbac:
-    defaultPolicy: 'role:readonly'
-    policy: |-
-      g, system:cluster-admins, role:admin
-    scopes: '[groups]'
   redis:
     resources:
       limits:
