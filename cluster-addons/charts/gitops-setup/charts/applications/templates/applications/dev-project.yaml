@@ -8,7 +8,7 @@ spec:
     - group: '*'
       kind: '*'
   destinations:
-    - namespace: 'dev'
+    - namespace: '*' # dev
       server: '*'
   sourceRepos:
     - '*'
