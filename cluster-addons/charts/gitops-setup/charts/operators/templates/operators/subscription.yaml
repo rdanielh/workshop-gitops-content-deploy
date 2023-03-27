@@ -25,7 +25,7 @@ spec:
   config:
     env:
     - name: ARGOCD_CLUSTER_CONFIG_NAMESPACES
-      value: ipa, app, dev, openshift-config, openshift-operators, pro
+      value: bookinfo, istio-system, openshift-nmstate ipa, app, openshift-config, openshift-operators, pro, dev
     - name: DISABLE_DEFAULT_ARGOCD_INSTANCE
       value: "true"      
 {{- end }}
