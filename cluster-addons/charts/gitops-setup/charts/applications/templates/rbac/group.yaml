@@ -1,35 +1,11 @@
+{{- if $.Values.global.render -}}
+{{- range $key, $val := $.Values.groups }}
 ---
-kind: Group
 apiVersion: user.openshift.io/v1
-metadata:
-  name: argo-admins
-users:
-  - user01
----
 kind: Group
-apiVersion: user.openshift.io/v1
 metadata:
-  name: argo-readers
+  name: {{ $key }}
 users:
-  - user02
----
-kind: Group
-apiVersion: user.openshift.io/v1
-metadata:
-  name: argo-operators
-users:
-  - user03
----
-kind: Group
-apiVersion: user.openshift.io/v1
-metadata:
-  name: argo-dev-operators
-users:
-  - user04
----
-kind: Group
-apiVersion: user.openshift.io/v1
-metadata:
-  name: argo-integration
-users:
-  - apimanager01  
+  - {{ $val.user }}
+{{- end }}
+{{- end -}}

@@ -1,0 +1,11 @@
+groups:
+ argo-admins:
+   user: user01
+ argo-readers:
+   user: user02
+ argo-operators:
+   user: user03
+ argo-dev-operators:
+   user: user04
+ argo-integration:
+   user: apimanager01   
