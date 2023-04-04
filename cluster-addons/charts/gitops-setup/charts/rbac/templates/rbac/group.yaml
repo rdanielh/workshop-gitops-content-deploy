@@ -4,6 +4,10 @@ kind: Group
 apiVersion: user.openshift.io/v1
 metadata:
   name: {{ $key }}
+  {{- if $.Values.global.argocd.enabled }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "10"
+  {{- end }}  
 users:
   - {{ $val.user }}
 {{- end }}  
