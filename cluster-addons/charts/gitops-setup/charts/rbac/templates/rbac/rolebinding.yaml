@@ -1,11 +1,11 @@
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: {{ $.Values.argocd.group }}-1
+  name: cluster-admins-1
 subjects:
   - kind: Group
     apiGroup: rbac.authorization.k8s.io
-    name: {{ $.Values.argocd.group }}
+    name: cluster-admins
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
