@@ -15,7 +15,7 @@ spec:
     metadata:
       name: 'setup-{{cluster.name}}-a'
     spec:
-      project: '{{cluster.project}}'
+      project: '{{project}}'
       source:
         repoURL: https://github.com/romerobu/workshop-gitops-content-deploy.git
         targetRevision: sno-1-setup
