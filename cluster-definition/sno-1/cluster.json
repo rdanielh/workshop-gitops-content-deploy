@@ -1,0 +1,10 @@
+{
+  "environment": "dev",
+  "cloud": "aws",
+  "project": "project-sno-1",
+  "region": "eu-central-1",
+  "cluster": {
+    "name": "sno-1",
+    "address": "https://api.sno-1.sandbox1444.opentlc.com:6443"
+  }
+}
