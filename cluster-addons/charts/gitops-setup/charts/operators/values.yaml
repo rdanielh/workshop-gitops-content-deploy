@@ -11,4 +11,3 @@ operators:
 
 argocd:
   name: argocd
-  group: cluster-admins

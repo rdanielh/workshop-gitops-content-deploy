@@ -9,3 +9,5 @@ groups:
    user: user04
  argo-integration:
    user: apimanager01   
+ cluster-admins:
+   user: admin

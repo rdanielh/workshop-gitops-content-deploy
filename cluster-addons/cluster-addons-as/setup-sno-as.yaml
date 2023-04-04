@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: setup-sno-1
+  name: setup-sno-<name>
   namespace: openshift-operators
 spec:
   generators:
@@ -20,11 +20,6 @@ spec:
         repoURL: https://github.com/romerobu/workshop-gitops-content-deploy.git
         targetRevision: main
         path: cluster-addons/charts/gitops-setup 
-         # si fuese necesario parametrizar el destino con variables, se puede usar el cluster name y las vars globales como parametros y habilitar secciones de variables
-         # por ejemplo:
-         # sno-1: # esto seria parametrizado por la var global
-            # varx: scads
-            # vary: sacds
       destination:
         server: '{{cluster.address}}'
       syncPolicy:
