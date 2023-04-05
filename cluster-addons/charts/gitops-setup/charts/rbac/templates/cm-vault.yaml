@@ -24,13 +24,13 @@ data:
           - bash
           - "-c"
           - |
-            helm repo add bitnami https://charts.bitnami.com/bitnami
+            echo "helm template $ARGOCD_APP_NAME -n $ARGOCD_APP_NAMESPACE -f $ARGOCD_ENV_HELM_FILES . --include-crds --debug"
             helm dependency build
       generate:
         command:
           - bash
           - "-c"
           - |
-             helm template $ARGOCD_APP_NAME -n $ARGOCD_APP_NAMESPACE -f $ARGOCD_ENV_HELM_FILES . > all.yaml && argocd-vault-plugin generate -s openshift-operators:argocd-vault-plugin-credentials all.yaml
+             helm template $ARGOCD_APP_NAME -n $ARGOCD_APP_NAMESPACE -f $ARGOCD_ENV_HELM_FILES . --include-crds | argocd-vault-plugin generate -s openshift-operators:argocd-vault-plugin-credentials -
             
       lockRepo: false
