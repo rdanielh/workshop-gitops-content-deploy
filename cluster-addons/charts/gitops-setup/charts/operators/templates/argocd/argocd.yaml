@@ -112,8 +112,8 @@ spec:
             secretKeyRef:
               key: AVP_SECRET_ID
               name: argocd-vault-plugin-credentials                  
-    #mountsatoken: true
-    #serviceaccount: argocd-repo-server
+    mountsatoken: true
+    serviceaccount: argocd-repo-server
     sidecarContainers:
       - command:
           - /var/run/argocd/argocd-cmp-server
