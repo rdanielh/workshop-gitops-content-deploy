@@ -30,6 +30,5 @@ data:
           - bash
           - "-c"
           - |
-            helm template . -n $ARGOCD_APP_NAMESPACE -f <(echo "$ARGOCD_ENV_HELM_VALUES") |
-            argocd-vault-plugin generate -s openshift-operators:argocd-vault-plugin-credentials -
+            helm template . -n $ARGOCD_APP_NAMESPACE $ARGOCD_ENV_HELM_VALUES | argocd-vault-plugin generate -s openshift-operators:argocd-vault-plugin-credentials -
       lockRepo: false
