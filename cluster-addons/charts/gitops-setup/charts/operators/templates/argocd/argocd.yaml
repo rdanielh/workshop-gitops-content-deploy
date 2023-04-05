@@ -99,9 +99,9 @@ spec:
           - /var/run/argocd/argocd-cmp-server
         image: 'registry.access.redhat.com/ubi8'
         name: avp-helm      
-        securityContext:
-          runAsNonRoot: true
-          runAsUser: 999         
+        # securityContext:
+        #   runAsNonRoot: true
+        #   runAsUser: 999         
         volumeMounts:
           - mountPath: /var/run/argocd
             name: var-files
