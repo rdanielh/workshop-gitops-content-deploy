@@ -67,6 +67,26 @@ spec:
         cpu: 250m
         memory: 256Mi
     env:
+        # - name: AVP_AUTH_TYPE
+        #   valueFrom:
+        #     secretKeyRef:
+        #       key: AVP_AUTH_TYPE
+        #       name: argocd-vault-plugin-credentials
+        # - name: AVP_TYPE
+        #   valueFrom:
+        #     secretKeyRef:
+        #       key: AVP_TYPE
+        #       name: argocd-vault-plugin-credentials
+        # - name: VAULT_ADDR
+        #   valueFrom:
+        #     secretKeyRef:
+        #       key: VAULT_ADDR
+        #       name: argocd-vault-plugin-credentials
+        # - name: AVP_K8S_ROLE
+        #   valueFrom:
+        #     secretKeyRef:
+        #       key: AVP_K8S_ROLE
+        #       name: argocd-vault-plugin-credentials       
         - name: AVP_AUTH_TYPE
           valueFrom:
             secretKeyRef:
@@ -82,11 +102,16 @@ spec:
             secretKeyRef:
               key: VAULT_ADDR
               name: argocd-vault-plugin-credentials
-        - name: AVP_K8S_ROLE
+        - name: AVP_ROLE_ID
           valueFrom:
             secretKeyRef:
-              key: AVP_K8S_ROLE
-              name: argocd-vault-plugin-credentials       
+              key: AVP_ROLE_ID
+              name: argocd-vault-plugin-credentials        
+        - name: AVP_SECRET_ID
+          valueFrom:
+            secretKeyRef:
+              key: AVP_SECRET_ID
+              name: argocd-vault-plugin-credentials                  
     #mountsatoken: true
     #serviceaccount: argocd-repo-server
     sidecarContainers:
