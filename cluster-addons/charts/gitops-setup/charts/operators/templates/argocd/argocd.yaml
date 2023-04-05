@@ -98,7 +98,10 @@ spec:
       - command:
           - /var/run/argocd/argocd-cmp-server
         image: 'quay.io/argoproj/argocd:v2.4.8'
-        name: avp-helm       
+        name: avp-helm      
+        securityContext:
+          runAsNonRoot: true
+          runAsUser: 999         
         volumeMounts:
           - mountPath: /var/run/argocd
             name: var-files
