@@ -31,6 +31,6 @@ data:
           - bash
           - "-c"
           - |
-            helm template $ARGOCD_APP_NAME -n $ARGOCD_APP_NAMESPACE --set global.oauth.enabled=true --set oauth.oauth.keycloak.clientid=myclient-1 --set oauth.oauth.keycloak.issuer=https://keycloak-keycloak.apps.argo-hub.sandbox1444.opentlc.com/realms/myrealm-1 --set oauth.oauth.keycloak.data=Oua8Mb8prUhMCFCUtwvpTPf3pQgD8KGE --set oauth.oauth.ldap.sync.ldap_url='ldap://10.0.210.36:32106' --set global.nmstate.enabled=false --set global.monitoring.enabled=false --set global.namespace.enabled=true --set namespace.networkpolicy.enabled=false --set global.bookinfo.enabled=true --set global.operators.enabled=true --set operators.operators.servicemesh.enabled=true --set operators.operators.jaeger.enabled=true --set operators.operators.kiali.enabled=true --set operators.operators.tekton.enabled=true --set operators.operators.nmstate.enabled=true --set operators.istio.enabled=true -f charts/namespace/values.yaml -f charts/operators/values.yaml -f charts/oauth/values.yaml -f charts/bookinfo/values.yaml -f charts/monitoring/values.yaml -f charts/nmstate/values.yaml . |
+             helm template $ARGOCD_APP_NAME -n $ARGOCD_APP_NAMESPACE $ARGOCD_ENV_HELM_VALUES . |
             argocd-vault-plugin generate -s openshift-operators:argocd-vault-plugin-credentials - 
       lockRepo: false
