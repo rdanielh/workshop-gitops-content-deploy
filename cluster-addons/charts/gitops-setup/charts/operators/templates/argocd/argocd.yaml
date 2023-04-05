@@ -108,7 +108,7 @@ spec:
           - mountPath: /home/argocd/cmp-server/plugins
             name: plugins
           - mountPath: /tmp
-            name: tmp-dir          
+            name: tmp-dir
           - mountPath: /home/argocd/cmp-server/config
             name: cmp-plugin
           - mountPath: /usr/local/bin/argocd-vault-plugin
@@ -125,7 +125,7 @@ spec:
       - emptyDir: {}
         name: custom-tools
       - emptyDir: {}
-        name: tmp-dir                          
+        name: tmp-dir                  
     initContainers:
       - args:
           - >-
@@ -139,7 +139,7 @@ spec:
         env:
           - name: AVP_VERSION
             value: 1.11.0
-        image: 'registry.access.redhat.com/ubi8'
+        image: 'alpine:3.8'
         name: download-tools
         volumeMounts:
           - mountPath: /custom-tools
