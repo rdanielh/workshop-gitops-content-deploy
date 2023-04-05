@@ -101,7 +101,7 @@ spec:
         name: avp-helm      
         securityContext:
           runAsNonRoot: true
-          runAsUser: 1000930000         
+          runAsUser: 999         
         volumeMounts:
           - mountPath: /var/run/argocd
             name: var-files
