@@ -88,12 +88,15 @@ spec:
               key: AVP_K8S_ROLE
               name: argocd-vault-plugin-credentials       
     mountsatoken: true
-    serviceaccount: argocd-repo-server
+    #serviceaccount: argocd-repo-server
     sidecarContainers:
       - command:
           - /var/run/argocd/argocd-cmp-server
         image: 'quay.io/argoproj/argocd:v2.4.8'
         name: avp-helm
+        securityContext:
+          runAsNonRoot: true
+          runAsUser: 999        
         volumeMounts:
           - mountPath: /var/run/argocd
             name: var-files
