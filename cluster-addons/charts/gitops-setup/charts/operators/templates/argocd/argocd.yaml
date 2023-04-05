@@ -97,7 +97,7 @@ spec:
     sidecarContainers:
       - command:
           - /var/run/argocd/argocd-cmp-server
-        image: 'quay.io/argoproj/argocd:v2.6.7'
+        image: registry.access.redhat.com/ubi8 #'quay.io/argoproj/argocd:v2.6.7'
         name: avp-helm      
         securityContext:
           runAsNonRoot: true
@@ -108,9 +108,7 @@ spec:
           - mountPath: /home/argocd/cmp-server/plugins
             name: plugins
           - mountPath: /tmp
-            name: tmp-dir
-          - mountPath: /.cache
-            name: cache            
+            name: tmp-dir          
           - mountPath: /home/argocd/cmp-server/config
             name: cmp-plugin
           - mountPath: /usr/local/bin/argocd-vault-plugin
@@ -127,9 +125,7 @@ spec:
       - emptyDir: {}
         name: custom-tools
       - emptyDir: {}
-        name: tmp-dir 
-      - emptyDir: {}
-        name: cache                          
+        name: tmp-dir                          
     initContainers:
       - args:
           - >-
