@@ -97,7 +97,7 @@ spec:
     sidecarContainers:
       - command:
           - /var/run/argocd/argocd-cmp-server
-        image: registry.access.redhat.com/ubi8
+        image: 'registry.access.redhat.com/ubi8'
         name: avp-helm      
         securityContext:
           runAsNonRoot: true
@@ -139,7 +139,7 @@ spec:
         env:
           - name: AVP_VERSION
             value: 1.11.0
-        image: 'alpine:3.8'
+        image: 'registry.access.redhat.com/ubi8'
         name: download-tools
         volumeMounts:
           - mountPath: /custom-tools
