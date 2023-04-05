@@ -109,6 +109,8 @@ spec:
             name: plugins
           - mountPath: /tmp
             name: tmp-dir
+          - mountPath: /.cache
+            name: cache            
           - mountPath: /home/argocd/cmp-server/config
             name: cmp-plugin
           - mountPath: /usr/local/bin/argocd-vault-plugin
@@ -125,7 +127,9 @@ spec:
       - emptyDir: {}
         name: custom-tools
       - emptyDir: {}
-        name: tmp-dir                  
+        name: tmp-dir 
+      - emptyDir: {}
+        name: cache                          
     initContainers:
       - args:
           - >-
