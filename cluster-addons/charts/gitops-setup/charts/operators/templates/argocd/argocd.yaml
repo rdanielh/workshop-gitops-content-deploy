@@ -100,7 +100,7 @@ spec:
         image: 'quay.io/argoproj/argocd:v2.6.7'
         name: avp-helm      
         securityContext:
-          runAsNonRoot: true
+          runAsRoot: true
           runAsUser: 999         
         volumeMounts:
           - mountPath: /var/run/argocd
