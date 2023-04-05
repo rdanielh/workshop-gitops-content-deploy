@@ -4,7 +4,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: cmp-plugin # To be defined parameters
-  namespace: vault #openshift-operators
+  namespace: openshift-operators
 data:
   plugin.yaml: |
     apiVersion: argoproj.io/v1alpha1
@@ -32,5 +32,5 @@ data:
           - "-c"
           - |
             helm template $ARGOCD_APP_NAME -n $ARGOCD_APP_NAMESPACE -f <(echo "$ARGOCD_ENV_HELM_VALUES") . |
-            argocd-vault-plugin generate -s vault:argocd-vault-plugin-credentials - 
+            argocd-vault-plugin generate -s openshift-operators:argocd-vault-plugin-credentials - 
       lockRepo: false
