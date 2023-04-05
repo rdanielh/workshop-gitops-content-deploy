@@ -24,7 +24,7 @@ data:
           - bash
           - "-c"
           - |
-            echo "helm template $ARGOCD_APP_NAME -n $ARGOCD_APP_NAMESPACE -f $ARGOCD_ENV_HELM_FILES . --include-crds --debug"
+            helm template $ARGOCD_APP_NAME -n $ARGOCD_APP_NAMESPACE -f <(echo "$ARGOCD_ENV_HELM_VALUES") . --debug
             helm dependency build
       generate:
         command:
