@@ -24,12 +24,12 @@ data:
           - bash
           - "-c"
           - |
-            helm template $ARGOCD_APP_NAME -n $ARGOCD_APP_NAMESPACE -f <(echo "$ARGOCD_ENV_HELM_VALUES") . --debug
+            helm dependency build
       generate:
         command:
           - bash
           - "-c"
           - |
-            helm template $ARGOCD_APP_NAME -n $ARGOCD_APP_NAMESPACE -f <(echo "$ARGOCD_ENV_HELM_VALUES") . |
+            helm template . -n $ARGOCD_APP_NAMESPACE -f <(echo "$ARGOCD_ENV_HELM_VALUES") |
             argocd-vault-plugin generate -s openshift-operators:argocd-vault-plugin-credentials -
       lockRepo: false
