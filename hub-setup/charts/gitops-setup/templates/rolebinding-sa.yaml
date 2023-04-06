@@ -4,7 +4,7 @@ metadata:
   name: cluster-admin-sa-argo
   {{- if $.Values.global.argocd.enabled }}
   annotations:
-    argocd.argoproj.io/sync-wave: "15"
+    argocd.argoproj.io/sync-wave: "-5"
   {{- end }}     
 subjects:
   - kind: ServiceAccount
