@@ -3,6 +3,10 @@ kind: AppProject
 metadata:
   name: dev
   namespace: openshift-operators
+  {{- if $.Values.global.argocd.enabled }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "10"
+  {{- end }}       
 spec:
   clusterResourceWhitelist:
     - group: '*'
