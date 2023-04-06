@@ -1,18 +1,20 @@
+
+# Setup argo hub: gitops, rbac, oauth etc.
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: gitops-bootstrapper-hub
-  namespace: openshift-operators
+  name: hub-setup
+  namespace: openshift-gitops
 spec:
   destination:
-    namespace: openshift-operators
+    namespace: openshift-gitops
     server: https://kubernetes.default.svc
-  project: default 
+  project: default
   source:
     repoURL: https://github.com/romerobu/workshop-gitops-content-deploy.git
     targetRevision: main
-    path: global-config/gitops-config-as/
+    path: hub-setup/charts/gitops-setup 
   syncPolicy:
     automated:
       prune: true
