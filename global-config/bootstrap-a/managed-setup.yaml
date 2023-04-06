@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cluster-addons-a-sno-<name>
+  name: managed-setup-a-<name>
   namespace: openshift-operators
 spec:
   destination:
