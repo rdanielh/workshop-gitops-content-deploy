@@ -11,3 +11,10 @@ operators:
 
 argocd:
   name: argocd
+
+vault: 
+  vault_addr: "http://vault-vault.apps.argo-hub.sandbox1444.opentlc.com"
+  avp_type: vault
+  avp_auth_type: approle
+  avp_role_id: e545c46e-12d8-67e6-a98a-73b0782900e8
+  avp_secret_id: d8fd9d3d-23f6-8743-0ed0-b52fc81c57a7
