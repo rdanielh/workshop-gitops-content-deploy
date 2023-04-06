@@ -9,4 +9,8 @@ dependencies:
 - name: operators
   version: "0.1.0"
   repository: "file://./charts/operators"
-  condition: operators.enabled
+  condition: global.operators.enabled
+- name: rbac
+  version: "0.1.0"
+  repository: "file://./charts/rbac"
+  condition: global.rbac.enabled  

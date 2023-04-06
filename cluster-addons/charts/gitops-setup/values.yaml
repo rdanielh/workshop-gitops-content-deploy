@@ -7,3 +7,5 @@ global:
     controller: openshift-operators
   operators: 
     enabled: true
+  rbac: 
+    enabled: true 
