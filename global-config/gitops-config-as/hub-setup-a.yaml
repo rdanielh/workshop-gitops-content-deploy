@@ -1,12 +1,11 @@
 
 # Setup argo hub: gitops, rbac, oauth etc.
-
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: hub-setup
-  namespace: openshift-operators
+  namespace: openshift-gitops
 spec:
   destination:
     namespace: openshift-gitops

@@ -1,20 +1,20 @@
-# ---
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: cluster-addons-a-sno-<name>
-#   namespace: openshift-operators
-# spec:
-#   destination:
-#     namespace: openshift-operators
-#     server: https://kubernetes.default.svc
-#   project: project-sno-<name>
-#   source:
-#     repoURL: https://github.com/romerobu/workshop-gitops-content-deploy.git
-#     targetRevision: sno-<name>-setup
-#     path: cluster-addons/cluster-addons-as/
-#   syncPolicy:
-#     automated:
-#       prune: true
-#       selfHeal: true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cluster-addons-a-sno-<name>
+  namespace: openshift-operators
+spec:
+  destination:
+    namespace: openshift-operators
+    server: https://kubernetes.default.svc
+  project: project-sno-<name>
+  source:
+    repoURL: https://github.com/romerobu/workshop-gitops-content-deploy.git
+    targetRevision: sno-<name>-setup
+    path: cluster-addons/cluster-addons-as/
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
 
