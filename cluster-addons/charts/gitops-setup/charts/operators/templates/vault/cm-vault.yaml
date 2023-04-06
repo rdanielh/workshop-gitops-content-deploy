@@ -1,10 +1,9 @@
 # PENDING
-
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: cmp-plugin # To be defined parameters
-  namespace: openshift-operators
+  name: cmp-plugin
+  namespace: {{ $.Values.operators.gitops.namespace }}
 data:
   plugin.yaml: |
     apiVersion: argoproj.io/v1alpha1
