@@ -1,5 +1,5 @@
 apiVersion: v2
-name: applications
+name: rbac
 description: A Helm chart for configuring argo RBAC
 type: application
 version: 0.1.0
