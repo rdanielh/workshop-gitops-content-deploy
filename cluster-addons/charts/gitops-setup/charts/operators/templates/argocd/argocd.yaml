@@ -23,6 +23,7 @@ spec:
   applicationSet:
     logLevel: info
   controller:
+    logLevel: debug
     resources:
       limits:
         cpu: 2000m
