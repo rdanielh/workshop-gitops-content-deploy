@@ -13,8 +13,5 @@ global:
   domain: sandbox1444
   sno:
     1:
-      kubeconfig: ''
-    2:
-      kubeconfig: ''
-    3: 
-      kubeconfig: ''     
+      token: 'sha256~PFEqwfk2kFeo4dnq5A5KvWPZL-q1atjcUNqrDeTaDx4'
+ 
