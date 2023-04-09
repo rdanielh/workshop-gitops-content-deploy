@@ -51,6 +51,7 @@ spec:
     logLevel: info
   resourceTrackingMethod: annotation+label
   controller:
+    logLevel: debug
     resources:
       limits:
         cpu: 2000m
