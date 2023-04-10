@@ -18,5 +18,5 @@ vault:
   avp_type: vault
   avp_auth_type: approle
   avp_role_id: a4400dee-f394-6002-ec0c-a0cf4f0969fb
-  avp_secret_id: 0ce85fee-fd0d-3d79-ff7e-55e9c62b1bdd
+  avp_secret_id: 1b08bf1b-c383-5224-4d10-a04502ae7046
 
