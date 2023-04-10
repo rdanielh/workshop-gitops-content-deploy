@@ -11,6 +11,7 @@ operators:
 
 argocd:
   name: argocd
+  group: cluster-admins
 
 vault: 
   vault_addr: "http://vault-vault.apps.argo-hub.sandbox81.opentlc.com"
