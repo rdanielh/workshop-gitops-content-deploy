@@ -18,9 +18,6 @@ spec:
   name: {{ $val.name }}
   source: redhat-operators
   sourceNamespace: openshift-marketplace
-{{- if $val.csv }}
-  startingCSV: {{ $val.csv }}
-{{- end }}
 {{- if $.Values.operators.gitops.enabled }}
   config:
     env:
