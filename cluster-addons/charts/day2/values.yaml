@@ -1,5 +1,5 @@
 clusters:
-  sno-11:
+  sno-<name>:
     applicationNamespace: openshift-operators
     namespace: ''
     destination: 'https://kubernetes.default.svc'
@@ -7,4 +7,4 @@ clusters:
     code:
       repo: https://github.com/romerobu/helm-infra-gitops-workshop.git
       path: .
-      target: sno-11
+      target: sno-<name>

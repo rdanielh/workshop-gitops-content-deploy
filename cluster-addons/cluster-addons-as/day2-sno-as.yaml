@@ -2,13 +2,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: day2-sno-11
+  name: day2-sno-<name>
   namespace: openshift-operators
 spec:
   generators:
   - git:
       repoURL: https://github.com/romerobu/workshop-gitops-content-deploy.git
-      revision: sno-11-setup
+      revision: sno-<name>-setup
       files:
       - path: "cluster-definition/**/cluster.json"
   template:
@@ -18,7 +18,7 @@ spec:
       project: '{{project}}'
       source:
         repoURL: https://github.com/romerobu/workshop-gitops-content-deploy.git
-        targetRevision: sno-11-setup
+        targetRevision: sno-<name>-setup
         path: cluster-addons/charts/day2
       destination:
         server: '{{cluster.address}}'

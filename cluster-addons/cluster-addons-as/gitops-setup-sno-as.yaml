@@ -2,27 +2,27 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: setup-sno-11
+  name: gitops-setup-sno-<name>
   namespace: openshift-operators
 spec:
   generators:
   - git:
       repoURL: https://github.com/romerobu/workshop-gitops-content-deploy.git
-      revision: sno-11-setup
+      revision: sno-<name>-setup
       files:
       - path: "cluster-definition/**/cluster.json"
   template:
     metadata:
-      name: 'setup-{{cluster.name}}-a'
+      name: 'gitops-setup-{{cluster.name}}-a'
     spec:
       project: '{{project}}'
       source:
         repoURL: https://github.com/romerobu/workshop-gitops-content-deploy.git
-        targetRevision: sno-11-setup
-        path: cluster-addons/charts/bootstrap-app
+        targetRevision: sno-<name>-setup
+        path: cluster-addons/charts/gitops-setup 
       destination:
         server: '{{cluster.address}}'
       syncPolicy:
         automated:
           prune: true
-          selfHeal: true 
+          selfHeal: true          
