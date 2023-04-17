@@ -11,5 +11,17 @@ metadata:
   {{- end }}  
 users:
   - user-{{ $key }}
+{{- end }} 
+---
+kind: Group
+apiVersion: user.openshift.io/v1
+metadata:
+  name: cluster-admins
+  {{- if $.Values.global.argocd.enabled }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "10"
+  {{- end }}  
+users:
+  - admin
 {{- end }}  
 {{- end -}} 
