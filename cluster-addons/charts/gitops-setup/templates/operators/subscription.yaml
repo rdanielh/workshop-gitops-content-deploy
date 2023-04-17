@@ -20,7 +20,7 @@ spec:
   config:
     env:
     - name: ARGOCD_CLUSTER_CONFIG_NAMESPACES
-      value: openshift-operators, openshift-gitops
+      value: openshift-gitops
     - name: DISABLE_DEFAULT_ARGOCD_INSTANCE
       value: "true"      
 {{- end }}
