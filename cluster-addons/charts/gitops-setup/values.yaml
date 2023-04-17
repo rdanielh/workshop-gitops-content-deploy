@@ -1,11 +1,23 @@
-# Default values for gitops setup
+# Operator
+operators:
+  gitops:
+    enabled: true
+    channel: latest
+    approval: Automatic
+    name: openshift-gitops-operator
+    source: redhat-operators
+    sourcenamespace: openshift-marketplace
+    namespace: openshift-operators
 
-global:
-  render: true
-  argocd:
-    enabled: true
-    controller: openshift-operators
-  operators: 
-    enabled: true
-  rbac: 
-    enabled: true 
+argocd:
+  name: argocd
+  group: cluster-admins
+  enabled: true
+  controller: openshift-operators
+
+vault: 
+  vault_addr: "http://vault-vault.apps.argo-hub.sandbox81.opentlc.com"
+  avp_type: vault
+  avp_auth_type: approle
+  avp_role_id: a4400dee-f394-6002-ec0c-a0cf4f0969fb
+  avp_secret_id: 1b08bf1b-c383-5224-4d10-a04502ae7046

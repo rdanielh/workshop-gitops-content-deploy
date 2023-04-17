@@ -1,9 +1,0 @@
-kind: ServiceAccount
-apiVersion: v1
-metadata:
-  name: argocd-repo-server
-  namespace: {{ $.Values.operators.gitops.namespace }}
-  {{- if $.Values.global.argocd.enabled }}
-  annotations:
-    argocd.argoproj.io/sync-wave: "5"
-  {{- end }}   

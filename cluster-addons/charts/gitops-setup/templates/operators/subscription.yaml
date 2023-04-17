@@ -1,0 +1,28 @@
+{{- range $key, $val := $.Values.operators }}
+{{- if $val.enabled }}
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: {{ $key }}
+  namespace: {{ $val.namespace }}
+  {{- if $.Values.argocd.enabled }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "-5"
+  {{- end }}
+spec:
+  channel: {{ $val.channel }}
+  installPlanApproval: {{ $val.approval }}
+  name: {{ $val.name }}
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+{{- if $.Values.operators.gitops.enabled }}
+  config:
+    env:
+    - name: ARGOCD_CLUSTER_CONFIG_NAMESPACES
+      value: openshift-operators, openshift-gitops
+    - name: DISABLE_DEFAULT_ARGOCD_INSTANCE
+      value: "false"      
+{{- end }}
+{{- end }}
+{{- end }}

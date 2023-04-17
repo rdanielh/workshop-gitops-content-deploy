@@ -1,0 +1,25 @@
+groups:
+ argo-admins:
+   user: user01 #  Admin permissions in ALL projects and applications
+ argo-readers:
+   user: user02 # Read-only permissions in ALL projects and applications
+ argo-operators:
+   user: user03 # View and Sync permission in ALL projects and applications
+ argo-dev-operators:
+   user: user04 #  View and Sync permission in DEV project and its applications
+ argo-integration:
+   user: apimanager01 # User has no permissions to see anything in Argo CD but has permissions to create objects in the Openshift Clusters
+ cluster-admins:
+   user: admin # full admin
+argocd:
+  name: argocd
+  enabled: true
+  controller: openshift-operators   
+  group: cluster-admins
+
+vault: 
+  vault_addr: "http://vault-vault.apps.argo-hub.sandbox81.opentlc.com"
+  avp_type: vault
+  avp_auth_type: approle
+  avp_role_id: a4400dee-f394-6002-ec0c-a0cf4f0969fb
+  avp_secret_id: 1b08bf1b-c383-5224-4d10-a04502ae7046
