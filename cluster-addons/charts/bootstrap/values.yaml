@@ -11,8 +11,9 @@ groups:
    user: apimanager01 # User has no permissions to see anything in Argo CD but has permissions to create objects in the Openshift Clusters
  cluster-admins:
    user: admin # full admin
+   
 argocd:
-  name: argocd
+  name: argocd-apps
   enabled: true
   controller: openshift-operators   
   group: cluster-admins
