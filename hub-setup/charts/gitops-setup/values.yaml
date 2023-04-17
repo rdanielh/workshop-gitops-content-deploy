@@ -12,5 +12,5 @@ global:
   namespace: openshift-operators
   domain: sandbox81
   sno:
-    6: 
+    11: 
       token: ''
