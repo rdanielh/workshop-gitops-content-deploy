@@ -1,0 +1,75 @@
+kind: ArgoCD
+apiVersion: argoproj.io/v1alpha1
+metadata:
+  name: {{ $.Values.argocd.name }}
+  namespace: {{ $.Values.argocd.controller }}
+  {{- if $.Values.argocd.enabled }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+  {{- end }}  
+spec:
+  sso:
+    dex:  
+      openShiftOAuth: true
+      resources:
+        limits:
+          cpu: 500m
+          memory: 256Mi
+        requests:
+          cpu: 250m 
+          memory: 128Mi
+    provider: dex
+  resourceTrackingMethod: annotation+label
+  applicationSet:
+    logLevel: info
+  controller:
+    logLevel: debug
+    resources:
+      limits:
+        cpu: 2000m
+        memory: 2048Mi
+      requests:
+        cpu: 250m
+        memory: 1024Mi
+  ha:
+    enabled: false
+    resources:
+      limits:
+        cpu: 500m
+        memory: 256Mi
+      requests:
+        cpu: 250m
+        memory: 128Mi
+  rbac:
+    defaultPolicy: ''
+    policy: |-
+      g, system:cluster-admins, role:admin
+      g, cluster-admins, role:admin     
+    scopes: '[groups]'
+  redis:
+    resources:
+      limits:
+        cpu: 500m
+        memory: 256Mi
+      requests:
+        cpu: 250m
+        memory: 128Mi
+  repo:
+    resources:
+      limits:
+        cpu: 1000m
+        memory: 1024Mi
+      requests:
+        cpu: 250m
+        memory: 256Mi                                          
+  resourceExclusions: "- apiGroups:\n  - tekton.dev\n  clusters:\n  - '*'\n  kinds:\n  - TaskRun\n  - PipelineRun        \n"
+  server:
+    resources:
+      limits:
+        cpu: 500m
+        memory: 256Mi
+      requests:
+        cpu: 125m
+        memory: 128Mi
+    route:
+      enabled: true
