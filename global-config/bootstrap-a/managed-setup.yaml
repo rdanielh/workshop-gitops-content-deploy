@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: managed-setup-a-<name>
+  name: managed-setup-a-15
   namespace: openshift-operators
 spec:
   destination:
