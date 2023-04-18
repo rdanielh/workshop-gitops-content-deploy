@@ -1,6 +1,0 @@
-apiVersion: v2
-name: day2
-description: A Helm chart for deploying day 2 configurations on managed clusters.
-type: application
-version: 0.1.0
-appVersion: "1.16.0"
