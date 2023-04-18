@@ -19,7 +19,7 @@ argocd:
   group: cluster-admins
 
 vault: 
-  vault_addr: "http://vault-vault.apps.argo-hub.sandbox81.opentlc.com"
+  vault_addr: "http://vault-vault.apps.argo-hub.<domain>.opentlc.com"
   avp_type: vault
   avp_auth_type: approle
   avp_role_id: a4400dee-f394-6002-ec0c-a0cf4f0969fb

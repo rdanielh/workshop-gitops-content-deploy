@@ -10,7 +10,7 @@ global:
   rbac: 
     enabled: true 
   namespace: openshift-operators
-  domain: sandbox81
+  domain: <domain>
   sno:
     15: 
       token: sha256~3PqApV-yySsHUMVf_8ztW4YAYTPXlvCDjTNAorZHhrg      
