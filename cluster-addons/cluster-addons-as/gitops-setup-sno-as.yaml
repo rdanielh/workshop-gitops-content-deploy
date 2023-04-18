@@ -7,7 +7,7 @@ metadata:
 spec:
   generators:
   - git:
-      repoURL: https://github.com/romerobu/workshop-gitops-content-deploy.git
+      repoURL: https://github.com/<your_user>/workshop-gitops-content-deploy.git
       revision: sno-<name>-setup
       files:
       - path: "cluster-definition/**/cluster.json"
@@ -17,7 +17,7 @@ spec:
     spec:
       project: '{{project}}'
       source:
-        repoURL: https://github.com/romerobu/workshop-gitops-content-deploy.git
+        repoURL: https://github.com/<your_user>/workshop-gitops-content-deploy.git
         targetRevision: sno-<name>-setup
         path: cluster-addons/charts/gitops-setup 
       destination:
