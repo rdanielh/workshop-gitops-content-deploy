@@ -1,16 +1,21 @@
+{{- if $.Values.global.render -}}
+{{- range $key, $val := $.Values.global.sno }}
+---
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: cluster-admins-1
+  name: cluster-reader-{{ $key }}
   {{- if $.Values.global.argocd.enabled }}
   annotations:
-    argocd.argoproj.io/sync-wave: "15"
-  {{- end }}   
+    argocd.argoproj.io/sync-wave: "10"
+  {{- end }}    
 subjects:
-  - kind: Group
+  - kind: User
     apiGroup: rbac.authorization.k8s.io
-    name: cluster-admins
+    name: user-{{ $key }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: cluster-admin
+  name: cluster-reader
+{{- end }}    
+{{- end -}}  
