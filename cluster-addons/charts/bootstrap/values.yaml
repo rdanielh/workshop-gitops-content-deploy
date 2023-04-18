@@ -31,6 +31,6 @@ namespaces:
   - name: dev
   - name: ipa
   - name: istio-system
-  - name: nmstate
+  - name: openshift-nmstate
   - name: pro
   - name: vault-secrets
