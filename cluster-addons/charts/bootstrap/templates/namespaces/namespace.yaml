@@ -1,7 +1,7 @@
 {{- range $key := $.Values.namespaces }}
 ---
 kind: Namespace
-apiVersion: user.openshift.io/v1
+apiVersion: v1
 metadata:
   name: {{ $key.name }}
   {{- if $.Values.argocd.enabled }}
