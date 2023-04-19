@@ -5,6 +5,6 @@ clusters:
     destination: 'https://kubernetes.default.svc'
     project: default
     code:
-      repo: https://github.com/romerobu/workshop-gitops-content-deploy.git
+      repo: https://github.com/<your_user>/workshop-gitops-content-deploy.git
       path: cluster-addons/charts/bootstrap
       target: sno-<name>-setup

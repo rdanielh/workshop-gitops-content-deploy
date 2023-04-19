@@ -12,7 +12,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    repoURL: https://github.com/romerobu/workshop-gitops-content-deploy.git
+    repoURL: https://github.com/<your_user>/workshop-gitops-content-deploy.git
     targetRevision: sno-<name>-setup
     path: hub-setup/charts/gitops-setup 
   syncPolicy:
