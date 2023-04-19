@@ -12,7 +12,7 @@ spec:
     - group: '*'
       kind: '*'
   destinations:
-    - namespace: 'dev'
+    - namespace: 'vault-secrets'
       server: '*'
   sourceRepos:
     - '*'
