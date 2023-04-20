@@ -13,7 +13,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/<your_user>/workshop-gitops-content-deploy.git
-    targetRevision: sno-<name>-setup
+    targetRevision: setup-sno
     path: hub-setup/charts/gitops-setup 
   syncPolicy:
     automated:
