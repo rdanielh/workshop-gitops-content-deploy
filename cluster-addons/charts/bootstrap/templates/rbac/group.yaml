@@ -9,5 +9,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "10"
   {{- end }}  
 users:
-  - {{ $val.user }}
+{{- with $val.users }}
+{{- toYaml . | nindent 2 }}
+{{- end }}  
 {{- end }}  

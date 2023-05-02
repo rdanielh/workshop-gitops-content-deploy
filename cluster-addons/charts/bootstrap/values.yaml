@@ -1,16 +1,22 @@
 groups:
  argo-admins:
-   user: user01 #  Admin permissions in ALL projects and applications
+   users: 
+    - user01 #  Admin permissions in ALL projects and applications
  argo-readers:
-   user: user02 # Read-only permissions in ALL projects and applications
+   users: 
+    - user02 # Read-only permissions in ALL projects and applications
  argo-operators:
-   user: user03 # View and Sync permission in ALL projects and applications
+   users: 
+    - user03 # View and Sync permission in ALL projects and applications
  argo-dev-operators:
-   user: user04 #  View and Sync permission in DEV project and its applications
+   users: 
+    - user04 #  View and Sync permission in DEV project and its applications
  argo-integration:
-   user: apimanager01 # User has no permissions to see anything in Argo CD but has permissions to create objects in the Openshift Clusters
+   users: 
+    - apimanager01 # User has no permissions to see anything in Argo CD but has permissions to create objects in the Openshift Clusters
  cluster-admins:
-   user: admin # full admin
+   users: 
+    - admin # full admin
 
 argocd:
   name: argocd-apps
