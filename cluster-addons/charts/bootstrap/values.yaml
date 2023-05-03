@@ -28,8 +28,8 @@ vault:
   vault_addr: "http://vault-vault.apps.argo-hub.<domain>.opentlc.com"
   avp_type: vault
   avp_auth_type: approle
-  avp_role_id: 9170d116-8c0d-b43c-b68c-08842a1d1a05
-  avp_secret_id: 13a49798-b126-68ac-b1af-367ababebecc
+  avp_role_id: bc3b4a85-5ed2-d428-ed74-b336138bff67
+  avp_secret_id: 7fe2a70a-91fe-5867-7f5e-d32a9cd48677
 
 namespaces:
   - name: app
