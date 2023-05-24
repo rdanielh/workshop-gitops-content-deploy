@@ -51,6 +51,9 @@ spec:
     logLevel: info
   resourceTrackingMethod: annotation+label
   controller:
+    sharding:
+      enabled: true
+      replicas: {{ $.Values.global.sharding }}   
     logLevel: debug
     resources:
       limits:

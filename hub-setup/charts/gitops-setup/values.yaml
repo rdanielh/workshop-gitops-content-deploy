@@ -11,6 +11,7 @@ global:
     enabled: true 
   namespace: openshift-operators
   domain: <domain>
+  sharding: <amount_of_sno>
   sno:
-    15: 
-      token: sha256~3PqApV-yySsHUMVf_8ztW4YAYTPXlvCDjTNAorZHhrg      
+    1: 
+      token: <token>      
