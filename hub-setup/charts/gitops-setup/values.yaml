@@ -13,7 +13,4 @@ global:
   domain: <domain>
   sno:
     1: 
-      token: <token>      
-    X: 
       token: <token>
-    ...    
