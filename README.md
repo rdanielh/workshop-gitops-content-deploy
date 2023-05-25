@@ -1,3 +1,5 @@
+:warning: **Repo added to this [organization](https://github.com/WorkshopGitOpsInfra)**, this is view-only.
+
 # workshop-gitops-content-deploy
 
 This repo is part of the [ArgoCD Managing Infrastructure workshop](https://romerobu.github.io/manual-workshop-infra/manual-workshop-infra/index.html) and is intended to deploy gitops and argo configuration on both hub and managed clusters. 
