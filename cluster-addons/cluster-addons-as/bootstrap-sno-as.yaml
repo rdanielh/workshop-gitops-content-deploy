@@ -2,13 +2,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: bootstrap-sno-<name>
+  name: bootstrap-sno-<clusterId>
   namespace: openshift-operators
 spec:
   generators:
   - git:
       repoURL: https://github.com/<your_user>/workshop-gitops-content-deploy.git
-      revision: sno-<name>-setup
+      revision: sno-<clusterId>-setup
       files:
       - path: "cluster-definition/**/cluster.json"
   template:
@@ -18,7 +18,7 @@ spec:
       project: '{{project}}'
       source:
         repoURL: https://github.com/<your_user>/workshop-gitops-content-deploy.git
-        targetRevision: sno-<name>-setup
+        targetRevision: sno-<clusterId>-setup
         path: cluster-addons/charts/bootstrap-app
       destination:
         server: '{{cluster.address}}'

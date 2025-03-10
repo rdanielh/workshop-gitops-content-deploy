@@ -1,5 +1,5 @@
 clusters:
-  sno-<name>:
+  sno-<clusterId>:
     applicationNamespace: openshift-gitops
     namespace: ''
     destination: 'https://kubernetes.default.svc'
@@ -7,4 +7,4 @@ clusters:
     code:
       repo: https://github.com/<your_user>/workshop-gitops-content-deploy.git
       path: cluster-addons/charts/bootstrap
-      target: sno-<name>-setup
+      target: sno-<clusterId>-setup
