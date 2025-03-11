@@ -1,5 +1,5 @@
 clusters:
-  sno-<clusterId>:
+  sno-<clusterId>:  # Mind to edit it here, too!!
     applicationNamespace: openshift-gitops
     namespace: ''
     destination: 'https://kubernetes.default.svc'

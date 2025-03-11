@@ -5,6 +5,6 @@
   "region": "eu-central-1",
   "cluster": {
     "name": "sno-<clusterId>",
-    "address": "https://api.sno-<clusterId>.<domain>.opentlc.com:6443"
+    "address": "https://api.sno-<clusterId>.<domain>:6443"
   }
 }
