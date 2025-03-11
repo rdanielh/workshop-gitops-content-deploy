@@ -118,8 +118,8 @@ spec:
   repo:
     resources:
       limits:
-        cpu: 1000m
-        memory: 1024Mi
+        cpu: "1"
+        memory: 1Gi
       requests:
         cpu: 250m
         memory: 256Mi
@@ -154,7 +154,7 @@ spec:
     sidecarContainers:
       - command:
           - /var/run/argocd/argocd-cmp-server
-        image: 'quay.io/argoproj/argocd:v2.4.8'
+        image: 'quay.io/argoproj/argocd:v2.13.5'
         name: avp-helm            
         volumeMounts:
           - mountPath: /var/run/argocd
@@ -192,7 +192,7 @@ spec:
           - '-c'
         env:
           - name: AVP_VERSION
-            value: 1.11.0
+            value: 1.18.1
         image: 'alpine:3.8'
         name: download-tools
         volumeMounts:
